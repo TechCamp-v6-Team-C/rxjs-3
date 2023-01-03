@@ -7,7 +7,8 @@ document.querySelector('body').append(input);
 const input$ = fromEvent(input, 'keyup');
 
 input$.pipe(
-    pluck('target', 'value')
+    pluck('target', 'value'),
+    //distinctUntilChanged()
 ).subscribe(console.log);
 
 
@@ -40,14 +41,14 @@ input$.pipe(
 //     distinctUntilChanged()
 // ).subscribe(console.log);
 
-// /************ 04 - delay *************/
+/************ 04 - delay *************/
 
 // input$.pipe(
 //     delay(3000),
 //     pluck('target', 'value')
 // ).subscribe(console.log);
 
-// /************ 06 - bufferTime *************/
+/************ 06 - bufferTime *************/
 
 // input$.pipe(
 //     bufferTime(2000)
